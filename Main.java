@@ -8,7 +8,6 @@ public class Main {
         String response = calc(expression);
         System.out.println("Output:\n" + response);
     }
-
     public static String calc(String input) {
         Main romanTest = new Main();
         Main arabToRoman = new Main();
@@ -20,12 +19,10 @@ public class Main {
         Integer num2;
         int result;
         boolean romanArab = false;
-
         String[] inputSplit = input.split(" ");
         if (inputSplit.length != 3) {
             return exceptionNoMath;
         }
-
         try {
             num1 = Integer.valueOf(inputSplit[0]);
             num2 = Integer.valueOf(inputSplit[2]);
@@ -37,9 +34,7 @@ public class Main {
             } catch (RuntimeException ex) {
                 return exceptionArabRoman;
             }
-
         }
-
         if ((num1 < 1 || num1 > 10) || (num2 < 1 || num2 > 10)) {
             return exceptionFormat;
         }
@@ -60,9 +55,7 @@ public class Main {
             default:
                 return exceptionFormat;
     }
-
         String output;
-
         if (romanArab){
             if(result < 1){
                 return exceptionRomanNegative;
@@ -74,7 +67,6 @@ public class Main {
         }
         return output;
     }
-
     Integer romanToArab(String romanInput){
         int result = 0;
         int[] arab = {10, 9, 5, 4, 1};
@@ -85,10 +77,8 @@ public class Main {
                 romanInput = romanInput.substring(roman[i].length());
             }
         }
-
         return result;
     }
-
     String arabToRome(int arabInput){
         String result = "";
         int value;
